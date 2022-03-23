@@ -1,8 +1,10 @@
+import { EnergyType } from "./energy";
+
 export class Resistance {
-    public name: string;
-    public val: number;
-    constructor(name, val){
-        this.name = name;
-        this.val = val;
+    public type: EnergyType;
+    public value: number;
+    constructor(type: EnergyType, value: number){
+        this.type = type;
+        this.value = value;
     }
 }
