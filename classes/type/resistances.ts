@@ -1,7 +1,6 @@
 import { Resistance } from "../resistance";
 import { EnergyTypes } from "./types";
 export class Resistances{
-
   public static Fighting = new Resistance(EnergyTypes.Fighting, 20);
   public static Normal = new Resistance(EnergyTypes.Normal, 10);
   public static Flying = new Resistance(EnergyTypes.Flying, 15);
@@ -20,6 +19,4 @@ export class Resistances{
   public static Dragon = new Resistance(EnergyTypes.Dragon, 23);
   public static Dark = new Resistance(EnergyTypes.Dark, 15);
   public static Fairy = new Resistance(EnergyTypes.Fairy, 15);
-
-
 }

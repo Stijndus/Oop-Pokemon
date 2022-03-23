@@ -34,21 +34,33 @@ export class Pokemon {
   public Attack(attack: Attack, defender: Pokemon) {
     let currentDamage = attack.damage;
     if (attack.type === defender.weakness.type) {
-      defender.Damage(currentDamage * defender.weakness.multiplier, `${this.name} did ${currentDamage} to ${defender.name} and was very effective!`);
+      return defender.Damage(
+        currentDamage * defender.weakness.multiplier,
+        `${this.name} did ${currentDamage} to ${defender.name} and was very effective!`,
+        defender
+      );
     } else if (attack.type === defender.resistance.type) {
-      defender.Damage(currentDamage - defender.resistance.value, `${this.name} did ${currentDamage} to ${defender.name} and was not very effective!`);
+      return defender.Damage(
+        currentDamage - defender.resistance.value,
+        `${this.name} did ${currentDamage} to ${defender.name} and was not very effective!`,
+        defender
+      );
     } else {
-      defender.Damage(currentDamage, `${this.name} did ${currentDamage} to ${defender.name}!`);
+      return defender.Damage(
+        currentDamage,
+        `${this.name} did ${currentDamage} to ${defender.name}!`,
+        defender
+      );
     }
   }
 
-  public Damage(damage: number, message: string) {
-    if(damage < 0) return `${this.name} dodged the attack!`
+  public Damage(damage: number, message: string, defender: Pokemon) {
+    if (damage < 0) return `${this.name} dodged ${defender.name}'s attack!`;
     if (this.currentHealth > 0) {
       this.currentHealth -= damage;
       return message;
     } else {
-        this.Die();
+      return this.Die();
     }
   }
 
