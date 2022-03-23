@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Resistance = void 0;
 var Resistance = /** @class */ (function () {
-    function Resistance(name, val) {
-        this.name = name;
-        this.val = val;
+    function Resistance(type, value) {
+        this.type = type;
+        this.value = value;
     }
     return Resistance;
 }());

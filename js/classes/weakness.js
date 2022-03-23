@@ -2,7 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Weakness = void 0;
 var Weakness = /** @class */ (function () {
-    function Weakness() {
+    function Weakness(type, multiplier) {
+        this.type = type;
+        this.multiplier = multiplier;
     }
     return Weakness;
 }());

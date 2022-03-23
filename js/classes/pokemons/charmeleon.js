@@ -15,17 +15,17 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Pikachu = void 0;
+exports.Charmeleon = void 0;
 var pokemon_1 = require("../pokemon");
 var resistances_1 = require("../type/resistances");
 var types_1 = require("../type/types");
 var weakness_1 = require("../type/weakness");
-var Pikachu = /** @class */ (function (_super) {
-    __extends(Pikachu, _super);
-    function Pikachu(name, health, attacks) {
-        return _super.call(this, name, health, types_1.EnergyTypes.Electric, attacks, resistances_1.Resistances.Fighting, weakness_1.Weaknesses.Fire) || this;
+var Charmeleon = /** @class */ (function (_super) {
+    __extends(Charmeleon, _super);
+    function Charmeleon(name, health, attacks) {
+        return _super.call(this, name, health, types_1.EnergyTypes.Fire, attacks, resistances_1.Resistances.Electric, weakness_1.Weaknesses.Water) || this;
     }
-    return Pikachu;
+    return Charmeleon;
 }(pokemon_1.Pokemon));
-exports.Pikachu = Pikachu;
-//# sourceMappingURL=pikachu.js.map
+exports.Charmeleon = Charmeleon;
+//# sourceMappingURL=charmeleon.js.map
