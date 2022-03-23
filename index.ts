@@ -2,12 +2,10 @@ import { Attack } from "./classes/attack";
 import { Pokemon } from "./classes/pokemon";
 import { Charmeleon } from "./classes/pokemons/charmeleon";
 import { Pikachu } from "./classes/pokemons/pikachu";
+import { Piplup } from "./classes/pokemons/piplup";
 import { EnergyTypes } from "./classes/type/types";
 
-
-
-
-const FlipFlapDeElektriciteitsMuis = new Pikachu(
+new Pikachu(
   "Flip Flap De Elektriciteits Muis",
   100,
   [
@@ -15,13 +13,23 @@ const FlipFlapDeElektriciteitsMuis = new Pikachu(
       new Attack("PikaPunch", EnergyTypes.Fighting, 20),
   ],
 );
-const FlapFlipDeVuurDraak = new Charmeleon(
+
+new Charmeleon(
   "Falp Flip De Vuur Draak",
   100,
   [
     new Attack("Head Butt", EnergyTypes.Fighting, 10),
     new Attack("Flare", EnergyTypes.Fire, 30)
   ],
+);
+
+new Piplup(
+  "Vage Water Eend",
+  75,
+  [
+    new Attack("Tackle", EnergyTypes.Normal, 15),
+    new Attack("Water Spout", EnergyTypes.Water, 25)
+  ]
 );
 
 while (Pokemon.pokedex.length > 1) {

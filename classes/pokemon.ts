@@ -36,19 +36,19 @@ export class Pokemon {
     if (attack.type === defender.weakness.type) {
       return defender.Damage(
         currentDamage * defender.weakness.multiplier,
-        `${this.name} did ${currentDamage} to ${defender.name} and was very effective!`,
+        `${defender.name}'s health is ${defender.currentHealth}! \n${this.name} did ${currentDamage} to ${defender.name} and was very effective!`,
         defender
       );
     } else if (attack.type === defender.resistance.type) {
       return defender.Damage(
         currentDamage - defender.resistance.value,
-        `${this.name} did ${currentDamage} to ${defender.name} and was not very effective!`,
+        `${defender.name}'s health is ${defender.currentHealth}! \n${this.name} did ${currentDamage} to ${defender.name} and was not very effective!`,
         defender
       );
     } else {
       return defender.Damage(
         currentDamage,
-        `${this.name} did ${currentDamage} to ${defender.name}!`,
+        `${defender.name}'s health is ${defender.currentHealth}! \n${this.name} did ${currentDamage} to ${defender.name}!`,
         defender
       );
     }
@@ -56,16 +56,16 @@ export class Pokemon {
 
   public Damage(damage: number, message: string, defender: Pokemon) {
     if (damage < 0) return `${this.name} dodged ${defender.name}'s attack!`;
+    this.currentHealth -= damage;
     if (this.currentHealth > 0) {
-      this.currentHealth -= damage;
       return message;
     } else {
-      return this.Die();
+      return this.Die(message);
     }
   }
 
-  public Die() {
+  public Die(message) {
     Pokemon.pokedex.splice(Pokemon.pokedex.indexOf(this), 1);
-    return `${this.name} fainted!`;
+    return `${message} \n ${this.name} fainted!`;
   }
 }

@@ -15,29 +15,29 @@ var Pokemon = /** @class */ (function () {
     Pokemon.prototype.Attack = function (attack, defender) {
         var currentDamage = attack.damage;
         if (attack.type === defender.weakness.type) {
-            return defender.Damage(currentDamage * defender.weakness.multiplier, "".concat(this.name, " did ").concat(currentDamage, " to ").concat(defender.name, " and was very effective!"), defender);
+            return defender.Damage(currentDamage * defender.weakness.multiplier, "".concat(defender.name, "'s health is ").concat(defender.currentHealth, "! \n").concat(this.name, " did ").concat(currentDamage, " to ").concat(defender.name, " and was very effective!"), defender);
         }
         else if (attack.type === defender.resistance.type) {
-            return defender.Damage(currentDamage - defender.resistance.value, "".concat(this.name, " did ").concat(currentDamage, " to ").concat(defender.name, " and was not very effective!"), defender);
+            return defender.Damage(currentDamage - defender.resistance.value, "".concat(defender.name, "'s health is ").concat(defender.currentHealth, "! \n").concat(this.name, " did ").concat(currentDamage, " to ").concat(defender.name, " and was not very effective!"), defender);
         }
         else {
-            return defender.Damage(currentDamage, "".concat(this.name, " did ").concat(currentDamage, " to ").concat(defender.name, "!"), defender);
+            return defender.Damage(currentDamage, "".concat(defender.name, "'s health is ").concat(defender.currentHealth, "! \n").concat(this.name, " did ").concat(currentDamage, " to ").concat(defender.name, "!"), defender);
         }
     };
     Pokemon.prototype.Damage = function (damage, message, defender) {
         if (damage < 0)
             return "".concat(this.name, " dodged ").concat(defender.name, "'s attack!");
+        this.currentHealth -= damage;
         if (this.currentHealth > 0) {
-            this.currentHealth -= damage;
             return message;
         }
         else {
-            return this.Die();
+            return this.Die(message);
         }
     };
-    Pokemon.prototype.Die = function () {
+    Pokemon.prototype.Die = function (message) {
         Pokemon.pokedex.splice(Pokemon.pokedex.indexOf(this), 1);
-        return "".concat(this.name, " fainted!");
+        return "".concat(message, " \n ").concat(this.name, " fainted!");
     };
     Pokemon.pokedex = [];
     return Pokemon;
