@@ -1,0 +1,1 @@
+{"version":3,"file":"pikachu.js","sourceRoot":"","sources":["../../../classes/pokemons/pikachu.ts"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;AAAA,sCAAqC;AAErC;IAA6B,2BAAO;IAChC,iBAAY,IAAI,EAAE,MAAM,EAAE,IAAI,EAAE,OAAO,EAAE,UAAU,EAAE,QAAQ;eACzD,kBAAM,IAAI,EAAE,MAAM,EAAE,IAAI,EAAE,OAAO,EAAE,UAAU,EAAE,QAAQ,CAAC;IAC5D,CAAC;IACL,cAAC;AAAD,CAAC,AAJD,CAA6B,iBAAO,GAInC;AAJY,0BAAO"}
