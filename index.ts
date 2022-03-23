@@ -15,7 +15,7 @@ new Pikachu(
 );
 
 new Charmeleon(
-  "Falp Flip De Vuur Draak",
+  "Flap Flip De Vuur Draak",
   100,
   [
     new Attack("Head Butt", EnergyTypes.Fighting, 10),

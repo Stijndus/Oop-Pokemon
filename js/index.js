@@ -10,7 +10,7 @@ new pikachu_1.Pikachu("Flip Flap De Elektriciteits Muis", 100, [
     new attack_1.Attack("Electric Ring", types_1.EnergyTypes.Electric, 50),
     new attack_1.Attack("PikaPunch", types_1.EnergyTypes.Fighting, 20),
 ]);
-new charmeleon_1.Charmeleon("Falp Flip De Vuur Draak", 100, [
+new charmeleon_1.Charmeleon("Flap Flip De Vuur Draak", 100, [
     new attack_1.Attack("Head Butt", types_1.EnergyTypes.Fighting, 10),
     new attack_1.Attack("Flare", types_1.EnergyTypes.Fire, 30)
 ]);
