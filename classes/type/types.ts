@@ -1,5 +1,5 @@
 import { EnergyType } from "../energy";
-export class EnergyTypes {
+export abstract class EnergyTypes {
   public static Normal = new EnergyType("Normal");
   public static Fighting = new EnergyType("Fighting");
   public static Flying = new EnergyType("Flying");
